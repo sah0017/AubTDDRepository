@@ -12,6 +12,8 @@ class Test(unittest.TestCase):
 
     def testprimeFactors(self):
         self.assertEqual(Factor.primeFactorsOf(1),[])
+        self.assertEqual(Factor.primeFactorsOf(2), [2])
+        
 
 
 if __name__ == "__main__":

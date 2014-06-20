@@ -7,6 +7,9 @@ Created on Jun 20, 2014
 
 
 def primeFactorsOf(myInteger):
-    return []
+    myFactors = []
+    if myInteger > 1:
+        myFactors.append(myInteger)
+    return myFactors
 
     
