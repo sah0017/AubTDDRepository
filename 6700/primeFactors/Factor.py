@@ -8,12 +8,13 @@ Created on Jun 20, 2014
 
 def primeFactorsOf(myInteger):
     myFactors = []
-    if myInteger > 1:
-        while (myInteger % 2) == 0:
-            myFactors.append(2)
-            myInteger = myInteger / 2
-    if myInteger > 1:
-        myFactors.append(myInteger)
+    index = 2
+    while myInteger > 1:
+        while (myInteger % index) == 0:
+            myFactors.append(index)
+            myInteger = myInteger / index
+        index = index + 1
+    
     return myFactors
 
     
