@@ -20,6 +20,8 @@ class Test(unittest.TestCase):
         self.assertEqual(Factor.primeFactorsOf(7), [7])
         self.assertEqual(Factor.primeFactorsOf(8), [2,2,2])
         self.assertEqual(Factor.primeFactorsOf(9), [3,3])
+        self.assertEqual(Factor.primeFactorsOf(10), [2,5])
+        self.assertEqual(Factor.primeFactorsOf(11), [11])
         
 
 
