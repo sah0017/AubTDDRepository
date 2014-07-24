@@ -6,18 +6,21 @@ Created on Jul 10, 2014
 
 import subprocess
 import Transformations
+import codecs
 
 def readGitFile(fileName):
     ## subprocess.call("git log -p -m > logfile")
     myList = []
-    gitFile = open(fileName)
+    gitFile = codecs.open(fileName, encoding='utf-16')
     myTrans = Transformations.Trans()
     for line in gitFile:
-        myLine = line.strip()
-
-        if myLine.find("Initial") > -1:
+        if line[0] == '+':
+            myList.append('New line')
+        if line[0] == '-':
+            myList.append('line removed')
+        if line.find("Initial") > -1:
             myList.append(myTrans.NEWFILE)
-        if myLine.find("+ pass") > -1:
+        if line.find("pass") > -1:
             myList.append(myTrans.NULL)
     gitFile.close()
     return myList

@@ -10,13 +10,16 @@ import Transformations
 class Test(unittest.TestCase):
 
     def setUp(self):
-        myTrans = Transformations.Trans()
-        
-    def testGitFile1(self):
-        self.assertEqual(GitFile.readGitFile("c:\\Users\\susanha\\git\\6700test\\testFile1.txt"),[0])
+        self.myTrans = Transformations.Trans()
+    '''        
+    def testGitFileInitial(self):
+        self.assertEqual(GitFile.readGitFile("c:\\Users\\susanha\\git\\6700test\\testFile1.txt"),[self.myTrans.NEWFILE])
 
-    def testGitFile2(self):
-        self.assertEqual(GitFile.readGitFile("c:\\Users\\susanha\\git\\6700test\\testFile2.txt"),[0,1])
+    def testGitFileInitialAndPass(self):
+        self.assertEqual(GitFile.readGitFile("c:\\Users\\susanha\\git\\6700test\\testFile2.txt"),[self.myTrans.NEWFILE, self.myTrans.NULL])
+    '''
+    def testLargeGitFile(self):
+        self.assertEqual(GitFile.readGitFile("c:\\Users\\susanha\\git\\6700test\\revLogFile-short"),['New line', 'line removed', self.myTrans.NULL,'New line'])
 
 
 
